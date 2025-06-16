@@ -1,4 +1,4 @@
-import im from '../assets/images/hero.jpg';
+import im from '../assets/images/hero4.jpg';
 
 export default function HeroSection() {
   return (
