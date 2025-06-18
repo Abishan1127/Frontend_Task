@@ -15,14 +15,14 @@ export default function Navbar() {
   return (
     <>
       <nav
-        className="navbar navbar-expand-md navbar-dark px-3 shadow  justify-content-end"
+        className="navbar navbar-expand-md navbar-dark px-3 shadow  "
         style={{ backgroundColor: '#161D27' }}
       >
         <div className="container-fluid ms-5" >
           <a className="navbar-brand d-flex align-items-center gap-2 justify-content-end" href="#">
             <img src={logo} alt="Logo" style={{ height: '40px' }} />
             <span className="fw-bold small text-warning">
-              Ramsha, Romania, Shepherd & Foundation
+              Ramsha, Shepherd & Foundation
             </span>
           </a>
 
