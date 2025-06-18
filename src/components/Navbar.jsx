@@ -3,85 +3,150 @@ import logo from '../assets/images/logo.png';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [aboutOpen, setAboutOpen] = useState(false);
-  const [articlesOpen, setArticlesOpen] = useState(false);
+
+  const handleHover = (e, enter) => {
+    if (enter) {
+      e.target.classList.add('bg-warning', 'text-dark');
+    } else {
+      e.target.classList.remove('bg-warning', 'text-dark');
+    }
+  };
 
   return (
-    <nav className="bg-[#0D1117] text-white px-6 py-3 shadow-md relative z-50">
-      <div className="flex justify-between items-center">
-        {/* Logo and Title */}
-        <div className="flex items-center gap-2">
-          <img src={logo} alt="Logo" className="h-10" />
-          <span className="font-bold text-sm md:text-base">
-            Ramsha, Romania, Shepherd & Foundation
-          </span>
-        </div>
+    <>
+      <nav
+        className="navbar navbar-expand-md navbar-dark px-3 shadow  justify-content-end"
+        style={{ backgroundColor: '#161D27' }}
+      >
+        <div className="container-fluid ms-5" >
+          <a className="navbar-brand d-flex align-items-center gap-2 justify-content-end" href="#">
+            <img src={logo} alt="Logo" style={{ height: '40px' }} />
+            <span className="fw-bold small text-warning">
+              Ramsha, Romania, Shepherd & Foundation
+            </span>
+          </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex gap-6 relative">
-          <a href="#" className="hover:bg-yellow-500 px-3 py-2 rounded-md">Home</a>
-
-          {/* Aboutus Dropdown */}
-          <div
-            className="relative group"
-            onMouseEnter={() => setAboutOpen(true)}
-            onMouseLeave={() => setAboutOpen(false)}
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={() => setOpen(!open)}
+            aria-label="Toggle navigation"
           >
-            <button className="hover:bg-yellow-500 px-3 py-2 rounded-md flex items-center gap-1">
-              Aboutus
-              <span className={`transition-transform duration-300 ${aboutOpen ? 'rotate-180' : ''}`}>
-                ▼
-              </span>
-            </button>
-            {aboutOpen && (
-              <div className="absolute bg-[#1A1F2B] mt-2 rounded shadow-lg w-40">
-                <a href="#" className="block px-4 py-2 hover:bg-yellow-600">Our Team</a>
-                <a href="#" className="block px-4 py-2 hover:bg-yellow-600">Vision</a>
-              </div>
-            )}
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className={`collapse navbar-collapse ${open ? 'show' : ''} justify-content-end`}  >
+            <ul className="navbar-nav me-4 gap-5 ms-2 ">
+              <li className="nav-item">
+                <a
+                  className="nav-link text-white fw-semibold px-2 py-1 "
+                  href="#"
+                  onMouseEnter={(e) => handleHover(e, true)}
+                  onMouseLeave={(e) => handleHover(e, false)}
+                >
+                  Home
+                </a>
+              </li>
+
+              <li className="nav-item dropdown ">
+                <a
+                  className="nav-link dropdown-toggle text-white px-2 py-1 d-flex align-items-center gap-2"
+
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  onMouseEnter={(e) => handleHover(e, true)}
+                  onMouseLeave={(e) => handleHover(e, false)}
+                >
+                  About us
+                </a>
+                <ul className="dropdown-menu bg-dark border-0">
+                  <li>
+                    <a
+                      className="dropdown-item text-white px-2 py-1"
+                      href="#"
+                      onMouseEnter={(e) => handleHover(e, true)}
+                      onMouseLeave={(e) => handleHover(e, false)}
+                    >
+                      Our Team
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdown-item text-white px-2 py-1 "
+                      href="#"
+                      onMouseEnter={(e) => handleHover(e, true)}
+                      onMouseLeave={(e) => handleHover(e, false)}
+                    >
+                      Vision
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  className="nav-link text-white px-2 py-1 "
+                  href="#"
+                  onMouseEnter={(e) => handleHover(e, true)}
+                  onMouseLeave={(e) => handleHover(e, false)}
+                >
+                  Services
+                </a>
+              </li>
+
+              <li className="nav-item dropdown">
+                <a
+                  className="nav-link dropdown-toggle text-white px-2 py-1 d-flex align-items-center gap-2"
+
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  onMouseEnter={(e) => handleHover(e, true)}
+                  onMouseLeave={(e) => handleHover(e, false)}
+                >
+                  Articles
+                </a>
+                <ul className="dropdown-menu bg-dark border-0">
+                  <li>
+                    <a
+                      className="dropdown-item text-white px-2 py-1 "
+                      href="#"
+                      onMouseEnter={(e) => handleHover(e, true)}
+                      onMouseLeave={(e) => handleHover(e, false)}
+                    >
+                      Legal Insights
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="dropdown-item text-white px-2 py-1 "
+                      href="#"
+                      onMouseEnter={(e) => handleHover(e, true)}
+                      onMouseLeave={(e) => handleHover(e, false)}
+                    >
+                      Case Studies
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li className="nav-item">
+                <a
+                  className="nav-link text-white px-2 py-1 me-5 "
+                  href="#"
+                  onMouseEnter={(e) => handleHover(e, true)}
+                  onMouseLeave={(e) => handleHover(e, false)}
+                >
+                  Contact Us
+                </a>
+              </li>
+            </ul>
           </div>
-
-          <a href="#" className="hover:bg-yellow-500 px-3 py-2 rounded-md">Services</a>
-
-          {/* Articles Dropdown */}
-          <div
-            className="relative group"
-            onMouseEnter={() => setArticlesOpen(true)}
-            onMouseLeave={() => setArticlesOpen(false)}
-          >
-            <button className="hover:bg-yellow-500 px-3 py-2 rounded-md flex items-center gap-1">
-              Articles
-              <span className={`transition-transform duration-300 ${articlesOpen ? 'rotate-180' : ''}`}>
-                ▼
-              </span>
-            </button>
-            {articlesOpen && (
-              <div className="absolute bg-[#1A1F2B] mt-2 rounded shadow-lg w-40">
-                <a href="#" className="block px-4 py-2 hover:bg-yellow-600">Legal Insights</a>
-                <a href="#" className="block px-4 py-2 hover:bg-yellow-600">Case Studies</a>
-              </div>
-            )}
-          </div>
-
-          <a href="#" className="hover:bg-yellow-500 px-3 py-2 rounded-md">Contact</a>
         </div>
-
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-xl" onClick={() => setOpen(true)}>☰</button>
-      </div>
-
-      {/* Offcanvas Mobile Menu */}
-     <div className={`fixed top-0 right-0 h-full bg-[#0D1117] w-full z-50 p-6 transition-transform duration-300 ${open ? "translate-x-0" : "translate-x-full"} text-center`}>
-
-        <button className="text-white text-3xl mb-4" onClick={() => setOpen(false)}>×</button>
-        <div className="flex flex-col gap-4">
-          <a href="#">Home</a>
-          <a href="#">Aboutus</a>
-          <a href="#">Services</a>
-          <a href="#">Articles</a>
-          <a href="#">Contact</a>
-        </div>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
