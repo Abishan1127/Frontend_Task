@@ -1,8 +1,8 @@
 import TopHeader from '../components/TopHeader';
 import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
-import TopFooter from '../components/TopFooter';
-import BottomFooter from '../components/BottomFooter'
+import Footer from '../components/Footer';
+
 
 export default function Home() {
   return (
@@ -10,8 +10,8 @@ export default function Home() {
       <TopHeader />
       <Navbar />
       <HeroSection />
-      <TopFooter />
-      <BottomFooter/>
+      <Footer />
+     
     </>
   );
 }
