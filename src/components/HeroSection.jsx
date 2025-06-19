@@ -2,6 +2,7 @@ import im from '../assets/images/hero4.jpg';
 
 export default function HeroSection() {
   return (
+    <div className='container-fluid p-0'>
     <div
       className="min-vh-100 d-flex align-items-center text-white px-3 px-md-5 "
       style={{
@@ -24,6 +25,7 @@ export default function HeroSection() {
           </a>
         </div>
       </div>
+    </div>
     </div>
   );
 }
