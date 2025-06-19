@@ -253,7 +253,7 @@ export default function Navbar() {
         style={{ backgroundColor: '#161D27' }}
       >
         <div className="container-fluid ms-5">
-          <a className="navbar-brand d-flex align-items-center gap-2 justify-content-end" href="#">
+          <a className="navbar-brand d-flex align-items-center gap-2 justify-content-end lg-ms-5" href="#">
             <img src={logo} alt="Logo" style={{ height: '40px' }} />
             <span className="fw-bold small text-warning d-none d-md-inline">
               Ramsha, Shepherd & Foundation
