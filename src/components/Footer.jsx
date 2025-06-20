@@ -41,7 +41,7 @@ export default function Footer() {
             </div>
 
             {/* Locations */}
-            <div className="col-md-2 me-5">
+            <div className="col-md-2 lg-me-5">
               <h5 className="text-warning mb-2">LOCATIONS</h5>
               <p className="small mb-2">No 186, Kili town,<br />A9 Road, Kilinochchi</p>
               <p className="small mb-2">Stepan road , 44000</p>
