@@ -23,11 +23,11 @@ export default function TeamSection() {
   const scrollRef = useRef(null);
 
   const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+    scrollRef.current.scrollBy({ left: -325, behavior: 'smooth' });
   };
 
   const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    scrollRef.current.scrollBy({ left: 325, behavior: 'smooth' });
   };
 
   return (
@@ -40,12 +40,15 @@ export default function TeamSection() {
         </p>
       </div>
 
-      {/* Scrollable Row */}
       <div className="position-relative">
         <div
-          className="d-flex flex-row overflow-auto"
+          className="d-flex flex-row"
           ref={scrollRef}
-          style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
+          style={{
+            overflowX: 'hidden', // hide horizontal scrollbar
+            scrollBehavior: 'smooth',
+            WebkitOverflowScrolling: 'touch'
+          }}
         >
           {teamMembers.map((member, idx) => (
             <div
@@ -54,7 +57,8 @@ export default function TeamSection() {
               key={idx}
             >
               <div className="position-relative mb-4">
-                <img src={member.img} className="img-fluid w-100" alt={member.name} />
+                <img src={member.img} className="img-fluid w-100 
+                "style={{ maxHeight: '300px' }} alt={member.name} />
                 <div
                   className="position-absolute start-0 end-0 text-white text-center py-2 px-3 mx-3"
                   style={{
@@ -72,7 +76,6 @@ export default function TeamSection() {
           ))}
         </div>
 
-        {/* Arrows */}
         <div className="d-flex justify-content-center gap-3 mt-3">
           <button className="btn btn-dark rounded-circle" onClick={scrollLeft}>
             <span className="carousel-control-prev-icon" />
