@@ -3,6 +3,7 @@ import HeroCarousel from '../components/HeroCarousel';
 import Footer from '../components/Footer';
 import About from '../components/About';
 import HerotextCarousel from '../components/HerotextCarousel';
+import Team from '../components/Team';
 
 
 export default function Home() {
@@ -12,6 +13,8 @@ export default function Home() {
       <HeroCarousel/>
       <HerotextCarousel />
       <About />
+
+      <Team />
       <Footer />
      
     </>
