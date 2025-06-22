@@ -57,7 +57,7 @@ export default function ConsultationForm() {
           {/* Left Section */}
           <div className="col-md-6 bg-dark text-white d-flex flex-column justify-content-center p-5">
             <small className="text-warning text-uppercase">Consultation</small>
-            <h2 className="mt-3">
+            <h2 className="mt-5">
               <strong>SCHEDULE YOUR</strong><br />
               <span className="text-warning">FREE CONSULTATION</span> <strong>TODAY</strong>
             </h2>
@@ -69,14 +69,15 @@ export default function ConsultationForm() {
                 <MdPhone style={{ color: '#ffc107', fontSize: '1.2rem' }} />
               </div>
               <div>
-                <h5 className="mb-0">02-9892-2298</h5>
+                <h5 className="mb-0">45-1234-4444</h5>
                 <small className="text-warning">Call us</small>
               </div>
             </div>
           </div>
 
           {/* Right Section - Form */}
-          <div className="col-md-6 bg-light p-5">
+         <div className="col-md-6 p-5" style={{ backgroundColor: '#EBF2FA' }}>
+
             <form noValidate onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label className="form-label">Name</label>
