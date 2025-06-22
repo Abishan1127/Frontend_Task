@@ -4,17 +4,17 @@ import im1 from '../assets/images/hero4.jpg';
 const slides = [
   {
     heading: 'Setting your Future\nwith medicine\nand Care',
-    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat quidem debitis magni earum, amet illum natus facere, cupiditate nesciunt iure officiis recusandae repellendus illo ipsum dolores itaque ex temporibus rerum.',
+    paragraph: 'nesciunt iure officiis recusandae repellendus illo ipsum dolores itaque temporibus rerum.',
     button: 'LEARN MORE'
   },
   {
     heading: 'Your strenth & Health\nOur Mission in world\nTrusted Always',
-    paragraph: 'Compassionate care, advanced technology, and a team dedicated to your wellness and recovery.',
+    paragraph: 'Compassionate care, advanced technology, and a team dedicated to your wellness recovery.',
     button: 'LEARN MORE'
   },
   {
     heading: 'Innovation in medical\nHealthcare is must\nStarts Here',
-    paragraph: 'Discover how we’re redefining patient care through modern medical practices and research.',
+    paragraph: 'Discover how we’re redefining patient care through modern medical practices research.',
     button: 'LEARN MORE'
   }
 ];
