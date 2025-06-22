@@ -19,7 +19,7 @@ const slides = [
   }
 ];
 
-export default function HerotextCarousel() {
+export default function HeroSection3() {
   const [index, setIndex] = useState(0);
 
   useEffect(() => {

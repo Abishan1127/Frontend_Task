@@ -1,19 +1,19 @@
 import Header from '../components/Header';
-import HeroCarousel from '../components/HeroCarousel';
+import HeroSection1 from '../components/HeroSection1';
+import HeroSection3 from '../components/HeroSection3';
 import Footer from '../components/Footer';
 import About from '../components/About';
-import HerotextCarousel from '../components/HerotextCarousel';
 import Team from '../components/Team';
+
 
 
 export default function Home() {
   return (
     <>
       <Header />
-      <HeroCarousel/>
-      <HerotextCarousel />
+      <HeroSection1/>
+      <HeroSection3/>
       <About />
-
       <Team />
       <Footer />
      

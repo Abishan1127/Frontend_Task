@@ -4,7 +4,7 @@ import im1 from '../assets/images/hero4.jpg';
 import im2 from '../assets/images/hero5.jpg';
 import im3 from '../assets/images/hero7.jpg';
 
-export default function HeroSection() {
+export default function HeroSection1() {
   return (
     <div className="container-fluid p-0">
       <div
@@ -99,7 +99,7 @@ export default function HeroSection() {
 
         </div>
 
-        {/* Carousel Controls */}
+        {/* Carousel Controls
         <button
           className="carousel-control-prev"
           type="button"
@@ -117,7 +117,7 @@ export default function HeroSection() {
         >
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
-        </button>
+        </button> */}
       </div>
     </div>
   );
