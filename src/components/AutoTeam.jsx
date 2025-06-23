@@ -21,29 +21,36 @@ const teamMembers = [
 
 export default function AutoTeam() {
   const scrollRef = useRef(null);
+  const cardRef = useRef(null); // ref to measure card width
   const intervalRef = useRef(null);
+  const [cardWidth, setCardWidth] = useState(325); // default, will update later
   const [isHovered, setIsHovered] = useState(false);
 
-  // Auto-scroll every 5 seconds unless hovered
+  // Measure card width after first render
+  useEffect(() => {
+    if (cardRef.current) {
+      setCardWidth(cardRef.current.offsetWidth);
+    }
+  }, []);
+
   useEffect(() => {
     const startAutoScroll = () => {
       intervalRef.current = setInterval(() => {
         if (!isHovered && scrollRef.current) {
-          scrollRef.current.scrollBy({ left: 325, behavior: 'smooth' });
+          scrollRef.current.scrollBy({ left: cardWidth, behavior: 'smooth' });
 
-          // Loop back to start if near the end
           const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
           if (scrollLeft + clientWidth >= scrollWidth - 10) {
             scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
           }
         }
-      }, 5000); // every 5 seconds
+      }, 5000);
     };
 
     startAutoScroll();
 
-    return () => clearInterval(intervalRef.current); // cleanup
-  }, [isHovered]);
+    return () => clearInterval(intervalRef.current);
+  }, [isHovered, cardWidth]);
 
   return (
     <div className="container my-5">
@@ -72,6 +79,7 @@ export default function AutoTeam() {
         >
           {teamMembers.map((member, idx) => (
             <div
+              ref={idx === 0 ? cardRef : null}
               className="flex-shrink-0 px-2 col-12 col-sm-6 col-md-4 col-lg-3"
               style={{ maxWidth: '100%' }}
               key={idx}
