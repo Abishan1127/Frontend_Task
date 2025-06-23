@@ -78,6 +78,8 @@ export default function MedicalDetails() {
                   <p><strong>Chronic Illnesses:</strong> 2</p>
                   <p><strong>Allergies:</strong> Penicillin</p>
                   <p><strong>Vaccinations Up-to-date:</strong> Yes</p>
+                   <p><strong>Allergies:</strong> Penicillin</p>
+                  <p><strong>Vaccinations Up-to-date:</strong> Yes</p>
                 </div>
               </div>
             </div>

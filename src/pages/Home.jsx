@@ -9,6 +9,7 @@ import Contact from '../components/Contact';
 import AutoTeam from '../components/AutoTeam';
 import ThreeDotsTeam from '../components/ThreeDotsTeam';
 import MedicalDetails from '../components/MedicalDetails';
+import Pano from '../components/Pano';
 
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <AutoTeam/>
       <ThreeDotsTeam />
       <MedicalDetails/>
+      <Pano/>
       <Contact />
       <Footer />
      
