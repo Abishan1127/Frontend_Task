@@ -78,10 +78,10 @@ export default function TeamSection() {
         </div>
 
         <div className="d-flex justify-content-center gap-1 mt-0 position-absolute top-50 start-50 translate-middle">
-          <button className="btn btn-dark rounded-circle" onClick={scrollLeft}>
+          <button className="btn btn-dark " onClick={scrollLeft}>
             <span className="carousel-control-prev-icon" />
           </button>
-          <button className="btn btn-dark rounded-circle" onClick={scrollRight}>
+          <button className="btn btn-dark " onClick={scrollRight}>
             <span className="carousel-control-next-icon" />
           </button>
         </div>
