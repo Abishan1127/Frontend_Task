@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 import About from '../components/About';
 import Team from '../components/Team';
 import Contact from '../components/Contact';
+import AutoTeam from '../components/AutoTeam';
+import ThreeDotsTeam from '../components/ThreeDotsTeam';
 
 
 
@@ -17,8 +19,9 @@ export default function Home() {
       <HeroSection2/>
       <HeroSection3/>
       <About />
-      
       <Team />
+      <AutoTeam/>
+      <ThreeDotsTeam />
       <Contact />
       <Footer />
      

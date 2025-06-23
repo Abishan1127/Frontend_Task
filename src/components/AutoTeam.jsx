@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import team1 from '../assets/images/team1.jpg';
 import team2 from '../assets/images/team2.jpg';
 import team3 from '../assets/images/team3.jpg';
@@ -19,16 +19,31 @@ const teamMembers = [
   { name: 'Sarah Lee', title: 'Legal Assistant', img: team8 },
 ];
 
-export default function TeamSection() {
+export default function AutoTeam() {
   const scrollRef = useRef(null);
+  const intervalRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const scrollLeft = () => {
-    scrollRef.current.scrollBy({ left: -325, behavior: 'smooth' });
-  };
+  // Auto-scroll every 5 seconds unless hovered
+  useEffect(() => {
+    const startAutoScroll = () => {
+      intervalRef.current = setInterval(() => {
+        if (!isHovered && scrollRef.current) {
+          scrollRef.current.scrollBy({ left: 325, behavior: 'smooth' });
 
-  const scrollRight = () => {
-    scrollRef.current.scrollBy({ left: 325, behavior: 'smooth' });
-  };
+          // Loop back to start if near the end
+          const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+          if (scrollLeft + clientWidth >= scrollWidth - 10) {
+            scrollRef.current.scrollTo({ left: 0, behavior: 'smooth' });
+          }
+        }
+      }, 5000); // every 5 seconds
+    };
+
+    startAutoScroll();
+
+    return () => clearInterval(intervalRef.current); // cleanup
+  }, [isHovered]);
 
   return (
     <div className="container my-5">
@@ -40,15 +55,19 @@ export default function TeamSection() {
         </p>
       </div>
 
-      <div className="position-relative">
+      <div
+        className="position-relative"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div
           className="d-flex flex-row"
           ref={scrollRef}
           style={{
-            overflowX: 'hidden', // hide horizontal scrollbar
-            overflowY: 'hidden', // hide vertical scrollbar
+            overflowX: 'hidden',
+            overflowY: 'hidden',
             scrollBehavior: 'smooth',
-            WebkitOverflowScrolling: 'touch'
+            WebkitOverflowScrolling: 'touch',
           }}
         >
           {teamMembers.map((member, idx) => (
@@ -58,8 +77,12 @@ export default function TeamSection() {
               key={idx}
             >
               <div className="position-relative mb-4">
-                <img src={member.img} className="img-fluid w-100 
-                "style={{ maxHeight: '300px' }} alt={member.name} />
+                <img
+                  src={member.img}
+                  className="img-fluid w-100"
+                  style={{ maxHeight: '300px', objectFit: 'cover' }}
+                  alt={member.name}
+                />
                 <div
                   className="position-absolute start-0 end-0 text-white text-center py-2 px-3 mx-3"
                   style={{
@@ -76,17 +99,7 @@ export default function TeamSection() {
             </div>
           ))}
         </div>
-
-        <div className="d-flex justify-content-center gap-1 mt-0 position-absolute top-50 start-50 translate-middle">
-          <button className="btn btn-dark " onClick={scrollLeft}>
-            <span className="carousel-control-prev-icon" />
-          </button>
-          <button className="btn btn-dark " onClick={scrollRight}>
-            <span className="carousel-control-next-icon" />
-          </button>
-        </div>
       </div>
     </div>
   );
 }
-
