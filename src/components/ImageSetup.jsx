@@ -8,9 +8,13 @@ export default function ImageSetup() {
             <div className="container text-white p-5 gap-5" style={{ backgroundColor: '#1F2732' }}>
                 <div className="row align-items-center">
                     {/* Image section with overlay */}
-                    <div className="col-12 col-md-6 order-1 order-md-0 position-relative">
+                    <div className="col-12 col-md-6 order-1 order-md-0 position-relative"
+                     style={{
+                                border: '30px solid white',
+                              
+                            }}>
                         <img src={aboutim} alt="About" className="img-fluid w-100 rounded" />
-
+                        <div>
                         {/* Overlay image in front */}
                         <img
                             src={overlayImg}
@@ -18,12 +22,13 @@ export default function ImageSetup() {
                             className="position-absolute shadow-lg"
                             style={{
                                 width: '60%',
-                                bottom: '0%',
-                                right: '0%',
-                                border: '6px solid white',
-                                borderRadius: '0.5rem',
+                                bottom: '-5%',
+                                right: '-5%',
+                                border: '30px solid white',
+                                
                             }}
                         />
+                        </div>
                     </div>
 
                     {/* Text Content */}
