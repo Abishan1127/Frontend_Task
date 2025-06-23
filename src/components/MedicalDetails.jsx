@@ -12,12 +12,12 @@ export default function MedicalDetails() {
 
   return (
     <div className="container-fluid my-5">
-      <div className="container text-center bg-dark py-5 px-4 rounded-4 shadow-lg">
+      <div className="container text-center bg-dark py-5 px-3 rounded-4 shadow-lg">
         <h6 className="text-warning fw-semibold mb-2">MEDICAL DETAILS</h6>
         <h2 className="fw-bold text-light mb-4">YOUR HEALTH, OUR PRIORITY</h2>
 
         {/* Tabs */}
-        <ul className="nav justify-content-center gap-4 mb-4 flex-wrap py-5">
+        <ul className="nav justify-content-center gap-2 mb-4 flex-wrap">
           {['personal', 'education', 'languages', 'interest'].map((tab) => (
             <li className="nav-item" key={tab}>
               <button className={tabStyle(tab)} onClick={() => setActiveTab(tab)}>
@@ -33,10 +33,10 @@ export default function MedicalDetails() {
         </ul>
 
         {/* Tab Content */}
-        <div className="p-4 text-white text-start bg-dark rounded">
+        <div className="p-3 text-white text-start bg-dark rounded">
           {activeTab === 'personal' && (
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-12 col-md-6 mb-4">
                 <h4>Patient Information</h4>
                 <p><strong>Name:</strong> Johnathan Doe</p>
                 <p><strong>DOB:</strong> Jan 1, 2000</p>
@@ -47,9 +47,8 @@ export default function MedicalDetails() {
                 <p><strong>Address:</strong> 123 Main Street, Kilinochchi</p>
                 <p><strong>Emergency Contact:</strong> Jane Doe – +94 77 765 4321</p>
               </div>
-              <div className="col-md-6 d-flex flex-column align-items-center justify-content-center">
-                <img src={team8} alt="Profile" className="img-fluid " 
-                style={{height:'250px' , width: '250px'}}/>
+              <div className="col-12 col-md-6 text-center">
+                <img src={team8} alt="Profile" className="img-fluid mb-2" style={{ maxHeight: '250px', maxWidth: '250px' }} />
                 <p className="text-secondary">Patient ID: #P12345678</p>
               </div>
             </div>
@@ -57,7 +56,7 @@ export default function MedicalDetails() {
 
           {activeTab === 'education' && (
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-12 col-md-6 mb-4">
                 <h4 className="text-warning">Medical History</h4>
                 <ul className="list-unstyled lh-lg">
                   <li><strong>Asthma:</strong> Diagnosed 2012</li>
@@ -72,7 +71,7 @@ export default function MedicalDetails() {
                   <li><strong>Seasonal Allergies:</strong> Mild symptoms</li>
                 </ul>
               </div>
-              <div className="col-md-6">
+              <div className="col-12 col-md-6">
                 <div className="bg-secondary rounded p-3 text-dark">
                   <h6 className="fw-bold">Diagnosis Summary</h6>
                   <p><strong>Surgeries:</strong> 1</p>
@@ -86,46 +85,47 @@ export default function MedicalDetails() {
 
           {activeTab === 'languages' && (
             <div className="row">
-              <div className="col-md-12">
+              <div className="col-12">
                 <h4 className="text-light mb-3 text-center">Current Medications</h4>
-                <table className="table table-dark table-bordered table-sm">
-                  <thead>
-                    <tr>
-                      <th>Medication</th>
-                      <th>Dosage</th>
-                      <th>Frequency</th>
-                      <th>Purpose</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Salbutamol Inhaler</td>
-                      <td>2 puffs</td>
-                      <td>As needed</td>
-                      <td>Asthma</td>
-                    </tr>
-                    <tr>
-                      <td>Lisinopril</td>
-                      <td>10 mg</td>
-                      <td>Once daily</td>
-                      <td>Blood pressure</td>
-                    </tr>
-                    <tr>
-                      <td>Vitamin D</td>
-                      <td>2000 IU</td>
-                      <td>Once daily</td>
-                      <td>Bone health</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div className="table-responsive">
+                  <table className="table table-dark table-bordered table-sm">
+                    <thead>
+                      <tr>
+                        <th>Medication</th>
+                        <th>Dosage</th>
+                        <th>Frequency</th>
+                        <th>Purpose</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Salbutamol Inhaler</td>
+                        <td>2 puffs</td>
+                        <td>As needed</td>
+                        <td>Asthma</td>
+                      </tr>
+                      <tr>
+                        <td>Lisinopril</td>
+                        <td>10 mg</td>
+                        <td>Once daily</td>
+                        <td>Blood pressure</td>
+                      </tr>
+                      <tr>
+                        <td>Vitamin D</td>
+                        <td>2000 IU</td>
+                        <td>Once daily</td>
+                        <td>Bone health</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
-              
             </div>
           )}
 
           {activeTab === 'interest' && (
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-12 col-md-6 mb-4">
                 <h4 className="text-light mb-3">Lifestyle & Wellness Habits</h4>
                 <ul className="list-unstyled lh-lg">
                   <li><strong>Smoking:</strong> Never smoked</li>
@@ -138,7 +138,7 @@ export default function MedicalDetails() {
                   <li><strong>Preventive Care:</strong> Annual checkups</li>
                 </ul>
               </div>
-              <div className="col-md-6">
+              <div className="col-12 col-md-6">
                 <h6 className="text-light">Weekly Activity Goal</h6>
                 <div className="progress mb-3" style={{ height: '20px' }}>
                   <div className="progress-bar bg-success" style={{ width: '75%' }}>
