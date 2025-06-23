@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { FaPlayCircle } from "react-icons/fa";
-import pano from "../assets/images/pano.jpg"; // Ensure this path is valid
+import pano from "../assets/images/pano.jpg";
 
 const Pano = () => {
   const [show, setShow] = useState(false);
 
   return (
     <>
-      {/* Background Image with Play Icon */}
+      {/* Parallax Wrapper */}
       <div
-        className="position-relative d-flex justify-content-center align-items-center"
+        className="position-relative d-flex justify-content-center align-items-center text-center"
         style={{
           backgroundImage: `url(${pano})`,
+          backgroundAttachment: "fixed", // key to parallax
           backgroundSize: "cover",
           backgroundPosition: "center",
-          height: "400px",
-          overflow: "hidden",
+          height: "50vh",
+          borderRadius: "0",
         }}
       >
         <Button
