@@ -10,6 +10,7 @@ import AutoTeam from '../components/AutoTeam';
 import ThreeDotsTeam from '../components/ThreeDotsTeam';
 import MedicalDetails from '../components/MedicalDetails';
 import Pano from '../components/Pano';
+import ImageSetup from '../components/ImageSetup';
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
       <MedicalDetails/>
       <Pano/>
       <Contact />
+      <ImageSetup/>
       <Footer />
      
     </>
