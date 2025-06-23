@@ -21,13 +21,18 @@ const teamMembers = [
 
 export default function ThreeDotsTeam() {
   const scrollRef = useRef(null);
+  const cardRef = useRef(null);
+  const [cardWidth, setCardWidth] = useState(325);
   const [isHovered, setIsHovered] = useState(false);
   const [scrollIndex, setScrollIndex] = useState(0);
-  const itemWidth = 325; // Same as original scroll step
-  const totalItems = teamMembers.length;
-  const visibleCount = 4; // Approx how many visible at once
-
   const totalDots = 3;
+
+  // Dynamically get card width after first render
+  useEffect(() => {
+    if (cardRef.current) {
+      setCardWidth(cardRef.current.offsetWidth);
+    }
+  }, []);
 
   const scrollToPosition = (dotIndex) => {
     if (scrollRef.current) {
@@ -46,21 +51,20 @@ export default function ThreeDotsTeam() {
       if (!isHovered && scrollRef.current) {
         const container = scrollRef.current;
         const maxScrollLeft = container.scrollWidth - container.clientWidth;
+        const newPosition = container.scrollLeft + cardWidth;
 
-        const newPosition = container.scrollLeft + itemWidth;
         if (newPosition >= maxScrollLeft - 10) {
-          // Go back to start
           container.scrollTo({ left: 0, behavior: 'smooth' });
           setScrollIndex(0);
         } else {
-          container.scrollBy({ left: itemWidth, behavior: 'smooth' });
+          container.scrollBy({ left: cardWidth, behavior: 'smooth' });
           setScrollIndex((prev) => prev + 1);
         }
       }
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isHovered]);
+  }, [isHovered, cardWidth]);
 
   return (
     <div className="container my-5">
@@ -92,6 +96,7 @@ export default function ThreeDotsTeam() {
               className="flex-shrink-0 px-2 col-12 col-sm-6 col-md-4 col-lg-3"
               style={{ maxWidth: '100%' }}
               key={idx}
+              ref={idx === 0 ? cardRef : null} // only attach ref to first card
             >
               <div className="position-relative mb-4">
                 <img
@@ -129,7 +134,7 @@ export default function ThreeDotsTeam() {
                 height: 12,
                 border: 'none',
                 backgroundColor: '#ffc107',
-                opacity: index === Math.round(scrollIndex / 2.7) ? 1 : 0.4,
+                opacity: index === Math.round(scrollIndex / (cardWidth ? (scrollRef.current?.scrollWidth - scrollRef.current?.clientWidth) / (cardWidth * (totalDots - 1)) : 2.7)) ? 1 : 0.4,
               }}
             />
           ))}
