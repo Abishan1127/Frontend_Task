@@ -33,10 +33,10 @@ export default function MedicalDetails() {
         </ul>
 
         {/* Tab Content */}
-        <div className="p-3 text-white text-start bg-dark rounded">
+        <div className="p-3 text-white text-start bg-dark rounded ">
           {activeTab === 'personal' && (
-            <div className="row">
-              <div className="col-12 col-md-6 mb-4">
+            <div className="row ">
+              <div className="col-12 col-md-6 mb-4 ">
                 <h4>Patient Information</h4>
                 <p><strong>Name:</strong> Johnathan Doe</p>
                 <p><strong>DOB:</strong> Jan 1, 2000</p>
@@ -148,7 +148,19 @@ export default function MedicalDetails() {
                 <blockquote className="blockquote text-muted">
                   <p>“Take care of your body. It’s the only place you have to live.”</p>
                 </blockquote>
+                <div className="col-12 col-md-6">
+                <h6 className="text-light">Weekly Exercises</h6>
+                <div className="progress mb-3" style={{ height: '20px' }}>
+                  <div className="progress-bar bg-success" style={{ width: '75%' }}>
+                    35%
+                  </div>
+                </div>
+                <blockquote className="blockquote text-muted">
+                  <p>“Take care of your body. It’s the only place you have to live.”</p>
+                </blockquote>
               </div>
+              </div>
+              
             </div>
           )}
         </div>
