@@ -21,17 +21,18 @@ export default function ScrollButton() {
       onClick={scrollToTop}
       className="btn btn-warning rounded-circle"
       style={{
-        position: 'absolute',
-        bottom: '20px',
-        right: '20px',
+        position: 'fixed', // THIS is the key change
+        bottom: '30px',
+        right: '30px',
         display: visible ? 'flex' : 'none',
         alignItems: 'center',
         justifyContent: 'center',
-        width: '45px',
-        height: '45px',
-        zIndex: 10,
+        width: '50px',
+        height: '50px',
+        zIndex: 9999,
         boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
       }}
+      aria-label="Scroll to top"
     >
       <i className="bi bi-arrow-up-short" style={{ fontSize: '1.5rem' }}></i>
     </button>
