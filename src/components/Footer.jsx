@@ -1,8 +1,9 @@
 import logo from '../assets/images/logo.png';
+import ScrollButton from './ScrollButton';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="position-relative"> {/* Needed to anchor absolute button */}
       {/* Top Footer */}
       <div className="text-white px-4 py-5" style={{ backgroundColor: '#161D27' }}>
         <div className="container-fluid">
@@ -50,6 +51,9 @@ export default function Footer() {
           </div>
         </div>
       </div>
+
+      {/* Scroll to Top Button */}
+      <ScrollButton />
 
       {/* Bottom Footer */}
       <div
