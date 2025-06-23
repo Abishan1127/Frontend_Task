@@ -256,7 +256,7 @@ export default function ConsultationForm() {
                   type="tel"
                   name="phone"
                   className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-                  placeholder="+1 415 123 4567"
+                  // placeholder="+1 415 123 4567"
                   value={formData.phone}
                   onChange={handleChange}
                 />
