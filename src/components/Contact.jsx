@@ -261,7 +261,7 @@ export default function ConsultationForm() {
                   onChange={handleChange}
                 />
                 <div className="invalid-feedback">{errors.phone}</div>
-                <small className="form-text text-muted">Enter your number in international format (e.g. +1 415 123 4567)</small>
+                
               </div>
 
               <div className="mb-4">
