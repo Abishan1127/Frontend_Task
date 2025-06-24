@@ -1,6 +1,6 @@
 import React from 'react';
 import aboutim from '../assets/images/about1.jpg';
-import overlayImg from '../assets/images/overlay.jpg'; // Replace with actual image path
+import overlayImg from '../assets/images/overlay.jpg'; 
 
 export default function ImageSetup() {
     return (

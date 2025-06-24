@@ -11,12 +11,14 @@ import ThreeDotsTeam from '../components/ThreeDotsTeam';
 import MedicalDetails from '../components/MedicalDetails';
 import Pano from '../components/Pano';
 import ImageSetup from '../components/ImageSetup';
+import Welcome from '../components/Welcome'
 
 
 export default function Home() {
   return (
     <>
       <Header />
+      <Welcome/>
       <HeroSection1/>
       <HeroSection2/>
       <HeroSection3/>
