@@ -7,13 +7,40 @@ export default function ImageSetup() {
         <div className="container-fluid p-0" style={{ backgroundColor: '#161D27' }}>
             <div className="container text-white p-5 gap-5" style={{ backgroundColor: '#1F2732' }}>
                 <div className="row align-items-center">
-                    <div className="col-12 col-md-6 order-0 order-md-1" >
-                        <div >
-
+                    <div className="col-12 col-md-6 order-1 order-md-0 position-relative">
+                        {/* Main Image */}
+                        <div
+                            style={{
+                                border: "30px solid white",
+                                display: "inline-block",
+                                width: "90%",
+                                boxSizing: "content-box",
+                            }}
+                        >
+                            <img
+                                src={aboutim}
+                                alt="Main"
+                                className="img-fluid w-100"
+                                style={{ display: "block", borderRadius: "8px" }}
+                            />
                         </div>
 
-
+                        {/* Overlay Image */}
+                        <img
+                            src={overlayImg}
+                            alt="Overlay"
+                            className="img-fluid position-absolute"
+                            style={{
+                                width: "40%",
+                                right: "6.5%",
+                                bottom: "6%",
+                                boxShadow: "0 0 15px rgba(0, 0, 0, 0.2)",
+                            }}
+                        />
                     </div>
+
+
+
 
 
                     {/* Text Content */}
