@@ -23,7 +23,7 @@ export default function AutoTeam() {
   const scrollRef = useRef(null);
   const cardRef = useRef(null); // ref to measure card width
   const intervalRef = useRef(null);
-  const [cardWidth, setCardWidth] = useState(325); // default, will update later
+  const [cardWidth, setCardWidth] = useState(325);
   const [isHovered, setIsHovered] = useState(false);
 
   // Measure card width after first render
