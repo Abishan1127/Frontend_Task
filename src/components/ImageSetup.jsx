@@ -32,9 +32,9 @@ export default function ImageSetup() {
                             className="img-fluid position-absolute"
                             style={{
                                 width: "40%",
-                                right: "6.5%",
-                                bottom: "6%",
-                                boxShadow: "0 0 15px rgba(0, 0, 0, 0.2)",
+                                right: "3.5%",
+                                bottom: "3%",
+                                border: "20px solid white",
                             }}
                         />
                     </div>
