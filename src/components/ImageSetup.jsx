@@ -37,7 +37,7 @@ export default function ImageSetup() {
                             style={{
                                 bottom: "2%",
                                 right: "3%",
-                                border: "20px solid white",
+                                border: "30px solid white",
                                 overflow: "hidden",
                                 width: "40%",
                             
