@@ -7,7 +7,7 @@ const Welcome = () => {
             <h1
                 className="fw-bold text-uppercase m-0"
                 style={{
-                    fontSize: "clamp(3rem, 10vw, 10rem)", // responsive font size
+                    fontSize: "clamp(3rem, 10vw, 10rem)", 
                     backgroundImage: `url(${bgImage})`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
